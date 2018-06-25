@@ -1,0 +1,66 @@
+  
+      <form name="formCadastro" method="get" action="/services/db/insert.php">
+   
+        <div class="form-group col-6">  
+         <label for="">Nome do cliente</label>
+        <input type="text" name="cliente" id="cliente" placeholder="Digite o nome" class="form-control">
+         </div>
+        <div class="form-group col-6">  
+         <label for="">Contato</label>
+          
+         <select name="tel">
+             <option value="telefone">Telefone</option>
+             <option value="celular">Celular</option>
+        </select>
+          
+        <input type="tel" name="tel" id="tel" placeholder="Digite o telefone" class="form-control">
+         </div>
+        
+         <div class="form-group col-6">  
+         <label for="">E-mail</label>
+        <input type="mail" name="email" id="email" placeholder="Digite o email" class="form-control">
+         </div>
+        <div class="form-group col-6">
+         <label for="">Cep</label>
+        <input type="tel" name="cep" id="cep" placeholder="Digite o cep" class="form-control">
+         </div>
+        <div class="form-group col-6">  
+         <label for="">Status</label>
+           <select name="status" id="status" class="form-control">
+             <option value="futura">Futura</option>
+             <option value="imediata">Imediata</option>
+             <option value="emAndamento">Em andamento</option>
+             <option value="concluida">Concluida</option>
+             <option value="semFechamento">Sem Fechamento</option>
+             <option value="Recusada">Recusada</option>
+          </select>
+         </div>
+         <div class="form-group col-6">  
+           <label for="">Observação</label>
+         <textarea rows="4" cols="50" name="obs" id="obs" placeholder="digite uma observação" class="form-control col-6"></textarea>
+         </div>
+        <div class="form-group col-6">
+            <label for="">Nome do Funcionário</label>
+        <input type="text" name="vendedor" id="vendedor" placeholder="Nome do vendedor" class="form-control">
+         </div>
+         <div class="form-group col-6">  
+         <label for="">Loja</label>
+           <select name="loja" id="loja" class="form-control">
+            <option value="loja1">Loja 1</option>
+             <option value="loja2">Loja 2</option>
+             <option value="loja3">Loja 3</option>
+           </select>
+         </div>
+        <div class="form-group col-6">  
+         <label for="">Canal</label>
+        
+          <select name="canal" id="canal" class="form-control">
+             <option value="facebook">Facebook</option>
+             <option value="pessoalmente">Pessoalmente</option>
+             <option value="siteDaLoja">Site da Loja</option>
+            <option value="indicacao">Indicação</option>
+          </select>
+          
+          
+         </div>
+  

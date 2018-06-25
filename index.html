@@ -1,56 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cadastro de cliente</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
+
 <body>
-      <form name="formCadastro" method="get" action="/services/db/insert.php">
-   
-        <div class="form-group col-6">  
-         <label for="">cliente</label>
-        <input type="text" name="cliente" id="cliente" placeholder="Digite o nome" class="form-control">
-         </div>
-        <div class="form-group col-6">  
-         <label for="">Telefone</label>
-        <input type="tel" name="tel" id="tel" placeholder="Digite o telefone" class="form-control">
-         </div>
-         <div class="form-group col-6">  
-         <label for="">E-mail</label>
+
+  <div class="bg-success">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <a class="navbar-brand" href="index.html">Menu</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tabela.html">Lista de Contatos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Sair</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+  <form class="mt-5" name="formCadastro" method="get" action="/services/db/insert.php">
+    <div class="form-row mx-auto col-md-8">
+      <div class="form-group mx-auto col-md-4">
+        <label for="">Nome do cliente</label>
+        <input type="text" class="form-control" name="cliente" id="cliente" placeholder="Digite o nome">
+      </div>
+      
+      <div class="form-group mx-auto col-md-4">
+
+        <label for="">Contato</label>
+        <div class="form-inline mx-auto">
+          <div class="form-group col-md-4">
+            <select name="tel">
+             <option value="telefone">Telefone</option>
+             <option value="celular">Celular</option>
+        </select>
+          </div>
+          <div class="form-group col-md-2">
+            <input type="tel" name="tel" id="tel" placeholder="Digite o telefone" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mx-auto col-md-8">
+      <div class="form-group  mx-auto col-md-4">
+        <label for="">E-mail</label>
         <input type="mail" name="email" id="email" placeholder="Digite o email" class="form-control">
-         </div>
-         <label for="">cep</label>
+      </div>
+      <div class="form-group  mx-auto col-md-4">
+        <label for="">Cep</label>
         <input type="tel" name="cep" id="cep" placeholder="Digite o cep" class="form-control">
-         </div>
-        <div class="form-group col-6">  
-         <label for="">Status</label>
-        <input type="text" name="status" id="status" placeholder="status" class="form-control">
-         </div>
-         <div class="form-group col-6">  
-           <label for="">Observação</label>
-         <textarea rows="4" cols="50" name="obs" id="obs" placeholder="digite uma observação">
-            
-        </textarea>
-         </div>
-           <label for="">vendedor</label>
-        <input type="text" name="vendedor" id="vendedor" placeholder="Nome do vendedor" class="form-control">
-         </div>
-         <div class="form-group col-6">  
-         <label for="">loja</label>
-        <input type="text" name="loja" id="loja" placeholder="Qual loja" class="form-control">
-         </div>
-        <div class="form-group col-6">  
-         <label for="">Canal</label>
-        <input type="text" name="canal" id="canal" placeholder="Como chegou até nós" class="form-control">
-         </div>
-  
-     
-        
-        
-        <button class="btn btn-success col-6">
-           <span class="glyphicons glyphicons-user-add"></span>
+      </div>
+    </div>
+
+    <div class="form-group mx-auto col-md-6">
+      <label for="">Observação</label>
+      <textarea rows="4" cols="50" name="obs" id="obs" placeholder="digite uma observação" class="form-control col-12"></textarea>
+    </div>
+    <div class="form-row mx-auto col-md-8">
+      <div class="form-group  mx-auto col-md-4">
+        <label for="">Vendedor</label>
+        <input type="text" class="form-control" name="cliente" id="cliente" placeholder="Digite o nome">
+      </div>
+      <div class="form-group mx-auto col-md-4">
+        <label for="">Loja</label>
+        <select name="loja" id="loja" class="form-control">
+            <option value="loja1">Loja 1</option>
+             <option value="loja2">Loja 2</option>
+             <option value="loja3">Loja 3</option>
+           </select>
+      </div>
+    </div>
+    <div class="form-row mx-auto col-md-8">
+      <div class="form-group mx-auto col-md-4">
+        <label for="">Canal</label>
+        <select name="canal" id="canal" class="form-control">
+             <option value="facebook">Facebook</option>
+             <option value="pessoalmente">Pessoalmente</option>
+             <option value="siteDaLoja">Site da Loja</option>
+            <option value="indicacao">Indicação</option>
+          </select>
+      </div>
+      <div class="form-group mx-auto col-md-4">
+        <label for="inputState">Status</label>
+        <select name="status" id="status" class="form-control">
+             <option value="futura">Futura</option>
+             <option value="imediata">Imediata</option>
+             <option value="emAndamento">Em andamento</option>
+             <option value="concluida">Concluida</option>
+             <option value="semFechamento">Sem Fechamento</option>
+             <option value="Recusada">Recusada</option>
+          </select>
+      </div>
+
+    </div>
+
+
+  </form>
+
+
+  <button class="btn-block btn-success  mx-auto">
             Salvar
         </button>
 </body>
+
 </html>
