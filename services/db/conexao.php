@@ -17,7 +17,7 @@
         // $pdo->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
         $sql = "use dbautoesporte";
         $pdo->exec($sql);
-       echo "Connect Successfully. Host info: " 
+       echo "Connect Successfully. Host info: " ;
     } catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
     }
