@@ -1,0 +1,31 @@
+colocar a ideia no servidor
+
+usar um banco de dados
+
+aplicação
+
+codeanywhere
+umbler
+não fazer coisas locais
+
+
+comandos ssh
+(aidiciona tudo)
+git add .
+
+(referencia da att)
+git commit -m "comentario"
+
+(envia alteracoes p git)
+git push -u origin master
+
+----------------------
+
+(campos do banco)
+data, hora, vendedor, nome do cliente, telefone, email, CEP, status, observação, loja, canal(por onde chegou).
+
+INSERT DO BANCO
+INSERT INTO vendas (cliente,tel, email, cep, status, obs, vendedor, loja, canal, data) VALUES ('bbbb', 1231241412, 'asdasdasdasd@asdasd.com', 12132141241, 'concluido', 'aaaaaaaa', 'bbbbb', 'asdas', 'asdadsasd', '2018-06-24 22:00:00')
+
+validar campos
+
