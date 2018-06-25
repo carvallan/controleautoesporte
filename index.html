@@ -1,1 +1,55 @@
-hello word
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de cliente</title>
+</head>
+<body>
+      <form name="formCadastro" method="get" action="/services/db/insert.php">
+   
+        <div class="form-group col-6">  
+         <label for="">cliente</label>
+        <input type="text" name="cliente" id="cliente" placeholder="Digite o nome" class="form-control">
+         </div>
+        <div class="form-group col-6">  
+         <label for="">Telefone</label>
+        <input type="tel" name="tel" id="tel" placeholder="Digite o telefone" class="form-control">
+         </div>
+         <div class="form-group col-6">  
+         <label for="">E-mail</label>
+        <input type="mail" name="email" id="email" placeholder="Digite o email" class="form-control">
+         </div>
+         <label for="">cep</label>
+        <input type="tel" name="cep" id="cep" placeholder="Digite o cep" class="form-control">
+         </div>
+        <div class="form-group col-6">  
+         <label for="">Status</label>
+        <input type="text" name="status" id="status" placeholder="status" class="form-control">
+         </div>
+         <div class="form-group col-6">  
+           <label for="">Observação</label>
+         <textarea rows="4" cols="50">
+            
+        </textarea>
+         </div>
+           <label for="">vendedor</label>
+        <input type="text" name="vendedor" id="vendedor" placeholder="Nome do vendedor" class="form-control">
+         </div>
+         <div class="form-group col-6">  
+         <label for="">loja</label>
+        <input type="text" name="loja" id="loja" placeholder="Qual loja" class="form-control">
+         </div>
+        <div class="form-group col-6">  
+         <label for="">Canal</label>
+        <input type="text" name="canal" id="canal" placeholder="Como chegou até nós" class="form-control">
+         </div>
+  
+     
+        
+        
+        <button class="btn btn-success col-6">
+           <span class="glyphicons glyphicons-user-add"></span>
+            Salvar
+        </button>
+</body>
+</html>
