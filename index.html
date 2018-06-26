@@ -61,6 +61,17 @@
         <input type="tel" name="cep" id="cep" placeholder="Digite o cep" class="form-control">
       </div>
     </div>
+    <div class="form-group mx-auto col-md-4">
+      <label>Status</label>
+      <select name="status" id="status" class="form-control">
+             <option value="futura">Futura</option>
+             <option value="imediata">Imediata</option>
+             <option value="emAndamento">Em andamento</option>
+             <option value="concluida">Concluida</option>
+             <option value="semFechamento">Sem Fechamento</option>
+             <option value="recusada">Recusada</option>
+          </select>
+    </div>
 
     <div class="form-group mx-auto col-md-6">
       <label>Observação</label>
@@ -90,27 +101,12 @@
             <option value="indicacao">Indicação</option>
           </select>
       </div>
-      <div class="form-group mx-auto col-md-4">
-        <label>Status</label>
-        <select name="status" id="status" class="form-control">
-             <option value="futura">Futura</option>
-             <option value="imediata">Imediata</option>
-             <option value="emAndamento">Em andamento</option>
-             <option value="concluida">Concluida</option>
-             <option value="semFechamento">Sem Fechamento</option>
-             <option value="Recusada">Recusada</option>
-          </select>
-      </div>
-
     </div>
-
-
   </form>
-
 
   <button type="submit" class="btn-block btn-success  mx-auto">
             Salvar
-        </button>
+  </button>
 </body>
 
 </html>
