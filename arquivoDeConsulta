@@ -29,3 +29,46 @@ INSERT INTO vendas (cliente,tel, email, cep, status, obs, vendedor, loja, canal,
 
 validar campos
 
+
+
+
+
+<?php
+function selected( $value, $selected ){
+    return $value==$selected ? ' selected="selected"' : '';
+}
+
+
+<select name="te">
+    <option value="">Escolha</option>
+    <option value="masculino"<?php echo selected( 'masculino', $sexo ); ?>>Masculino</option>
+    <option value="feminino"<?php echo selected( 'feminino', $sexo ); ?>>Feminino</option>
+</select>
+
+
+
+
+
+intermediação ()
+
+
+
+https://bootsnipp.com/snippets/nNZ47
+
+
+https://www.youtube.com/watch?v=IMefEdNvz9E
+
+https://startbootstrap.com/template-overviews/sb-admin/
+
+https://www.youtube.com/watch?v=IPGrKCPL4Kk
+
+https://github.com/glaucia86/projeto.crud.php
+
+https://www.grocerycrud.com/demo/bootstrap_theme_v4
+
+https://webdevacademy.com.br/tutoriais/crud-bootstrap-php-mysql/
+
+link do cadastro: https://bootsnipp.com/snippets/featured/mix-amp-match-register
+
+
+

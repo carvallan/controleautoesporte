@@ -12,6 +12,8 @@
     $loja = $_GET['loja'];
     $canal = $_GET['canal'];
     $data = date ("Y-m-d H:i:s", $phptime);
+
+          
     
     require_once 'conexao.php';
 
