@@ -99,6 +99,11 @@
              <option value="pessoalmente">Pessoalmente</option>
              <option value="siteDaLoja">Site da Loja</option>
             <option value="indicacao">Indicação</option>
+          
+          <?php while($canal = mysql_fetch_array($query)) { ?>
+ <option value="<?php echo $canal['canal'] ?>"><?php echo $canal['canal'] ?></option>
+ <?php } ?>
+          
           </select>
       </div>
     </div>
