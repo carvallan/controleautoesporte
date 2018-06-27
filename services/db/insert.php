@@ -2,16 +2,17 @@
 
     ini_set('default_charset', 'UTF-8');
 
-    $cliente = $_GET['cliente'];
-    $tel = $_GET['tel'];
-    $email = $_GET['email'];
-    $cep = $_GET['cep'];
-    $status = $_GET['status'];
-    $obs = $_GET['obs'];
+    $nome = $_GET['nome'];
+    $contato = $_GET['contato'];
+    $redesocial = $_GET['redesocial'];
+    $carronegociado = $_GET['carronegociado'];
+    $detalhesnegociacao = $_GET['detalhesnegociacao'];
     $vendedor = $_GET['vendedor'];
     $loja = $_GET['loja'];
     $canal = $_GET['canal'];
-    $data = date ("Y-m-d H:i:s", $phptime);
+    $status = $_GET['status'];
+    $criado = date ("Y-m-d H:i:s", $phptime);
+    $modificado = date ("Y-m-d H:i:s", $phptime);
 
           
     
@@ -19,29 +20,31 @@
 
     // Attempt insert query execution
     try{
-        $sql = "INSERT INTO vendas (
-            cliente,
-            tel,
-            email,
-            cep,
-            status,
-            obs,
+        $sql = "INSERT INTO clientes (
+            nome,
+            contato,
+            redesocial,
+            carronegociado,
+            detalhesnegociacao,
             vendedor,
             loja,
             canal,
-            data
+            status,
+            criado,
+            modificado
             
             ) VALUES (
-                '$cliente',
-                 $tel,
-                '$email',
-                 $cep,
-                '$status',
-                '$obs',
+                '$nome',
+                 $contato,
+                '$redesocial',
+                 $carronegociado,
+                '$detalhesnegociacao',
                 '$vendedor',
                 '$loja',
                 '$canal',
-                '$data'
+                '$status',
+                '$criado',
+                '$modificado'
             )";
 
         $pdo->exec($sql);
