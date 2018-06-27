@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php
+  // definições de host, database, usuário e senha
+  $host = "mysql472.umbler.com";
+  $db   = "dbautoesporte";
+  $user = "autoesporte";
+  $pass = "autoesporte1";
+// conecta ao banco de dados
+$con = mysql_pconnect($host, $user, $pass) or trigger_error(mysql_error(),E_USER_ERROR); 
+// seleciona a base de dados em que vamos trabalhar
+mysql_select_db($db, $con);
+// cria a instrução SQL que vai selecionar os dados
+$query = sprintf("SELECT nome, contato, redesocial, carronegociado, detalhesdenegociacao, vendedor, loja, canal, status FROM clientes");
+// executa a query
+$dados = mysql_query($query, $con) or die(mysql_error());
+// transforma os dados em um array
+$linha = mysql_fetch_assoc($dados);
+// calcula quantos dados retornaram
+$total = mysql_num_rows($dados);
+?>
 <html lang="en">
 
 <head>
@@ -40,6 +59,7 @@
       </div>
     </nav>
   </div>
+
   </div>
   <table class="table table-hover bg-light">
     <thead>
@@ -53,43 +73,38 @@
         <th scope="col">Loja</th>
          <th scope="col">Canal</th>
         <th scope="col">Status</th>
-      </tr>
+      </tr>   
     </thead>
+    
     <tbody>
+        <?php
+    // se o número de resultados for maior que zero, mostra os dados
+    if($total > 0) {
+        // inicia o loop que vai mostrar todos os dados
+        do }
+?>
       <tr>
-        <td>Mark</td>
-        <td>11111111111</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>11111111111</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>11111111111</td>
-        <td>@mdo</td>
+        <td><?=$linha['nome']?></td>
+        <td><?=$linha['contato']?></td>
+        <td><?=$linha['redesocial']?></td>
+        <td><?=$linha['carronegociado']?></td>
+        <td><?=$linha['detalhesdenegociacao']?> </td>
+        <td><?=$linha['vendedor']?></td>
+        <td><?=$linha['loja']?></td>
+        <td><?=$linha['canal']?></td>
+        <td><?=$linha['status']?></td>
       </tr>
-      <tr>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
+      
+    <?php
+        // finaliza o loop que vai mostrar os dados
+        }while($linha = mysql_fetch_assoc($dados));
+    // fim do if 
+    }
+?> 
+  
     </tbody>
   </table>
 </body>
 
 </html>
+
