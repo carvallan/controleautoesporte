@@ -11,6 +11,8 @@
     $loja = $_GET['loja'];
     $canal = $_GET['canal'];
     $status = $_GET['status'];
+    $criado = date ("Y-m-d H:i:s", $phptime);
+    $modificado = date ("Y-m-d H:i:s", $phptime);
 
           
     
@@ -35,7 +37,7 @@
                 '$nome',
                  $contato,
                 '$redesocial',
-                 $carronegociado,
+                '$carronegociado',
                 '$detalhesnegociacao',
                 '$vendedor',
                 '$loja',
