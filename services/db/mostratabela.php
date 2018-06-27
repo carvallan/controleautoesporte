@@ -1,39 +1,38 @@
-<?php	
-/**	 *  Pesquisa um Registro pelo ID em uma Tabela	 */
-function find( $table = null, $id = null ) {
-  $database = open_database();
-  $found = null;
-  try {
-    if ($id) {
-      $sql = "SELECT * FROM " . $table . " WHERE id = " . $id;
-      $result = $database->query($sql);
-      if ($result->num_rows > 0) {
-        $found = $result->fetch_assoc();
-      }	
-    } else {
-      $sql = "SELECT * FROM "
-        . $table;
-      $result = $database->query($sql);
-      if ($result->num_rows > 0) {
-        $found = $result->fetch_all(MYSQLI_ASSOC);
-        /* Metodo alternativo	      
-        $found = array();
-        while ($row = $result->fetch_assoc()) {	
-        array_push($found, $row);	        } */
-      }	
-    }	
-  } 
-  catch (Exception $e) {
-    $_SESSION['message'] = $e->GetMessage();
-    $_SESSION['type'] = 'danger';
-  }	
-  close_database($database);
-  return $found;	
+<?php
+ 
+//Conexão e consulta ao Mysql
+mysql_connect('mysql472.umbler.com','autoesporte','autoesporte1') or die(mysql_error());
+mysql_select_db('mysql') or die(mysql_error());
+$qry = mysql_query("select nome as nome, contato as contato from clientes");
+ 
+//Pegando os nomes dos campos
+$num_fields = mysql_num_fields($qry);//Obtém o número de campos do resultado
+ 
+for($i = 0;$i<$num_fields; $i++){//Pega o nome dos campos
+	$fields[] = mysql_field_name($qry,$i);
 }
-
-<?php	
-  /**	 *  Pesquisa Todos os Registros de uma Tabela
-  */
-  function find_all( $table ) {	
-  return find($table);
-}	
+ 
+//Montando o cabeçalho da tabela
+$table = '<table border="1"><tr>';
+ 
+for($i = 0;$i < $num_fields; $i++){
+	$table .= '<th>'.$fields[$i].'</th>';
+}
+ 
+//Montando o corpo da tabela
+$table .= '<tbody>';
+while($r = mysql_fetch_array($qry)){
+	$table .= '<tr>';
+	for($i = 0;$i < $num_fields; $i++){
+		$table .= '<td>'.$r[$fields[$i]].'</td>';
+	}
+	$table .= '</tr>';
+}
+ 
+//Finalizando a tabela
+$table .= '</tbody></table>';
+ 
+//Imprimindo a tabela
+echo $table;
+ 
+?>
