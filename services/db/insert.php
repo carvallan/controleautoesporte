@@ -2,17 +2,17 @@
 
     ini_set('default_charset', 'UTF-8');
 
-    $nome = $_GET['nome'];
-    $contato = $_GET['contato'];
-    $redesocial = $_GET['redesocial'];
-    $carronegociado = $_GET['carronegociado'];
-    $detalhesdenegociacao = $_GET['detalhesdenegociacao'];
-    $vendedor = $_GET['vendedor'];
-    $loja = $_GET['loja'];
-    $canal = $_GET['canal'];
-    $status = $_GET['status'];
-    $criado = date ('Y-m-d H:i:s', $phptime);
-    $modificado = date ('Y-m-d H:i:s', $phptime);
+    $nome = $_GET["nome"];
+    $contato = $_GET["contato"];
+    $redesocial = $_GET["redesocial"];
+    $carronegociado = $_GET["carronegociado"];
+    $detalhesdenegociacao = $_GET["detalhesdenegociacao"];
+    $vendedor = $_GET["vendedor"];
+    $loja = $_GET["loja"];
+    $canal = $_GET["canal"];
+    $status = $_GET["status"];
+    $criado = date ("Y-m-d H:i:s", $phptime);
+    $modificado = date ("Y-m-d H:i:s", $phptime);
 
     
     require_once 'conexao.php';
