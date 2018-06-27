@@ -6,7 +6,7 @@
     $contato = $_GET['contato'];
     $redesocial = $_GET['redesocial'];
     $carronegociado = $_GET['carronegociado'];
-    $detalhesnegociacao = $_GET['detalhesnegociacao'];
+    $detalhesdenegociacao = $_GET['detalhesdenegociacao'];
     $vendedor = $_GET['vendedor'];
     $loja = $_GET['loja'];
     $canal = $_GET['canal'];
@@ -25,7 +25,7 @@
             contato,
             redesocial,
             carronegociado,
-            detalhesnegociacao,
+            detalhesdenegociacao,
             vendedor,
             loja,
             canal,
@@ -38,7 +38,7 @@
                  $contato,
                 '$redesocial',
                 '$carronegociado',
-                '$detalhesnegociacao',
+                '$detalhesdenegociacao',
                 '$vendedor',
                 '$loja',
                 '$canal',
