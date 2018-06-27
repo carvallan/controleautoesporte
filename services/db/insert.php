@@ -33,17 +33,17 @@
             modificado
             
             ) VALUES (
-                "$nome",
+                '$nome',
                  $contato,
-                "$redesocial",
-                "$carronegociado",
-                "$detalhesdenegociacao",
-                "$vendedor",
-                "$loja",
-                "$canal",
-                "$status",
-                "$criado",
-                "$modificado"
+                '$redesocial',
+                '$carronegociado',
+                '$detalhesdenegociacao',
+                '$vendedor',
+                '$loja',
+                '$canal',
+                '$status',
+                '$criado',
+                '$modificado'
             )";
 
         $pdo->exec($sql);
