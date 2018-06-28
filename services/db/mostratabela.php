@@ -12,35 +12,24 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 );
  
 //pecorrendo os registros da consulta.
-
-  <table>
-     <thead>
-      <tr>
-        <th scope="col">Modelo</th>
-        <th scope="col">Marca</th>
-        <th scope="col">Versão</th>
-         <th scope="col">Ano</th>
-        <th scope="col">Motor</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Telefone</th>
-         <th scope="col">Detalhes da Negociação</th>
-        <th scope="col">Valor pré negociado</th>
-      </tr>
-    </thead>
-    while($aux = mysqli_fetch_assoc($sql))
+while($aux = mysqli_fetch_assoc($sql))
 {
+  echo "<table>";
+  
     echo "<tbody />";
-      echo "<tr>".$aux["nome"]."</tr />";
-      echo "<tr>".$aux["contato"]."</tr />";
-      echo "<tr>".$aux["redesocial"]."</tr />";
-      echo "<tr>".$aux["carronegociado"]."</tr />";
-      echo "<tr>".$aux["detalhesdenegociacao"]."</tr />";
-      echo "<tr>".$aux["vendedor"]."</tr />";
-      echo "<tr>".$aux["loja"]."</tr />";
-      echo "<tr>".$aux["canal"]."</tr />";
-      echo "<tr>".$aux["status"]."</tr />";
+  echo "<tr />";
+      echo "<td>".$aux["nome"]."</td />";
+      echo "<td>".$aux["contato"]."</td />";
+      echo "<td>".$aux["redesocial"]."</td />";
+      echo "<td>".$aux["carronegociado"]."</td />";
+      echo "<td>".$aux["detalhesdenegociacao"]."</td />";
+      echo "<td>".$aux["vendedor"]."</td />";
+      echo "<td>".$aux["loja"]."</td />";
+      echo "<td>".$aux["canal"]."</td />";
+      echo "<td>".$aux["status"]."</td />";
+  echo "</tr />";
     echo "</tbody />";
-  </table>
+  echo "</table />";
   
   
 }
