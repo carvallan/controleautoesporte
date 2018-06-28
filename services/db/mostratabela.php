@@ -15,6 +15,19 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 while($aux = mysqli_fetch_assoc($sql))
 {
   echo "<table>";
+      <thead>
+      <tr>
+        <th scope="col">Modelo</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Versão</th>
+         <th scope="col">Ano</th>
+        <th scope="col">Motor</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+         <th scope="col">Detalhes da Negociação</th>
+        <th scope="col">Valor pré negociado</th>
+      </tr>
+    </thead>
     echo "<tbody />";
       echo "<tr>".$aux["nome"]."</tr />";
       echo "<tr>".$aux["contato"]."</tr />";
