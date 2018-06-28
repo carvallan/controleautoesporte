@@ -1,7 +1,13 @@
 <?php
 // Conexão ao banco
 
-$link = require_once 'conexao.php';
+$link =         $pdo = new PDO("mysql:host=mysql472.umbler.com", "autoesporte", "autoesporte1", array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
+                PDO::ATTR_PERSISTENT => false,
+                PDO::ATTR_EMULATE_PREPARES => false,
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+            )
+        );
 
 // Seleciona o Banco de dados através da conexão acima
 
