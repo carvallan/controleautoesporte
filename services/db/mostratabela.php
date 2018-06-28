@@ -1,7 +1,7 @@
 <?php
 // Conexão ao banco
 
-$link =         $pdo = new PDO("mysql:host=mysql472.umbler.com", "autoesporte", "autoesporte1", array(
+$pdo = new PDO("mysql:host=mysql472.umbler.com", "autoesporte", "autoesporte1", array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
                 PDO::ATTR_PERSISTENT => false,
                 PDO::ATTR_EMULATE_PREPARES => false,
@@ -11,7 +11,7 @@ $link =         $pdo = new PDO("mysql:host=mysql472.umbler.com", "autoesporte", 
 
 // Seleciona o Banco de dados através da conexão acima
 
-$conexao = mysql_select_db('dbautoesporte',$link); if($conexao){
+$conexao = mysql_select_db('dbautoesporte',$pdo); if($conexao){
 
 $sql = "SELECT nome,contato,redesocial,carronegociado,detalhesdenegociacao,vendedor,loja,canal,status FROM clientes";
 
