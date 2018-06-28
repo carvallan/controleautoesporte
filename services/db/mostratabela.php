@@ -20,8 +20,6 @@ echo '<tr>';
 echo '<td>Nome</td>';
 
 echo '<td>contato</td>';
-
-echo '<td>E-mail</td>';
   
 echo '<td>redesocial</td>';
   
@@ -40,7 +38,7 @@ echo '</tr>';
 
 // Armazena os dados da consulta em um array associativo
 
-while($registro = mysql_fetch_assoc($consulta)){
+while($registro = mysqli_fetch_assoc($consulta)){
 
 echo '<tr>';
 
