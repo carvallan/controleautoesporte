@@ -78,20 +78,21 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
       </tr>   
     </thead>  
     <tbody>
+      
       <?php
           while($aux = mysqli_fetch_assoc($sql))
               {
-                    echo '<tr>';
-                    echo '<td>'$aux['nome']'</td>'
-                    echo '<td>'$aux['contato']'</td>'
-                    echo '<td>'$aux['redesocial']'</td>'
-                    echo '<td>'$aux['carronegociado']'</td>'
-                    echo '<td>'$aux['detalhesdenegociacao']'</td>'
-                    echo '<td>'$aux['vendedor']'</td>'
-                    echo '<td>'$aux['loja']'</td>'
-                    echo '<td>'$aux['canal']'</td>'
-                    echo '<td>'$aux['status']'</td>'
-                    echo '</tr>'
+                    echo "<tr>";
+                    echo '<td>'. $aux['nome'] .'</td>'
+                    echo '<td>'. $aux['contato'] .'</td>'
+                    echo '<td>'. $aux['redesocial'] .'</td>'
+                    echo '<td>'. $aux['carronegociado'] .'</td>'
+                    echo '<td>'. $aux['detalhesdenegociacao'] .'</td>'
+                    echo '<td>'. $aux['vendedor']' .</td>'
+                    echo '<td>'. $aux['loja']' .</td>'
+                    echo '<td>'. $aux['canal']' .</td>'
+                    echo '<td>'. $aux['status']' .</td>'
+                    echo '</tr>';
               }
       ?>
 
