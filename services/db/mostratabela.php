@@ -16,7 +16,7 @@ while($aux = mysqli_fetch_assoc($sql))
 {
 	echo "<table>";
   echo "<tbody>"
-	 "<tr>".$aux["nome"]."</tr>",
+	 <tr>.$aux["nome"].</tr>,
 	echo "<tr>".$aux["contato"]."</tr>",
   echo "<tr>".$aux["redesocial"]."</tr>",
 	echo "<tr>".$aux["carronegociado"]."</tr>",
