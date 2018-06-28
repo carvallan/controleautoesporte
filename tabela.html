@@ -81,10 +81,10 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
       
       <?php
 /*Enquanto houver dados na tabela para serem mostrados será executado tudo que esta dentro do while */
-while($escrever=mysql_fetch_array($res)){
+while($escrever=mysql_fetch_array($sql)){
 
 /*Escreve cada linha da tabela*/
-echo “<tr><td>” . $aux[’login’] . “</td><td>” . $aux[’nome’] . “</td><td>” . $aux[’contato’] . “</td></tr>”;
+echo “<tr><td>” . $aux['login'] . “</td><td>” . $aux['nome'] . “</td><td>” . $aux['contato'] . “</td></tr>”;
 
 }/*Fim do while*/
 
