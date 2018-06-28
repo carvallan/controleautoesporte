@@ -16,16 +16,16 @@ while($aux = mysqli_fetch_assoc($sql))
 {
 	echo "<table>";
   echo "<tbody>"
-	echo "<tr>".$aux["nome"]."</tr>";
-	echo "<tr>".$aux["contato"]."</tr>";
-  echo "<tr>".$aux["redesocial"]."</tr>";
-	echo "<tr>".$aux["carronegociado"]."</tr>";
-  echo "<tr>".$aux["detalhesdenegociacao"]."</tr>";
-	echo "<tr>".$aux["vendedor"]."</tr>";
-  echo "<tr>".$aux["loja"]."</tr>";
-	echo "<tr>".$aux["canal"]."</tr>";
-  echo "<tr>".$aux["status"]."</tr>";
-  echo "</tbody>"
+	echo "<tr>".$aux["nome"]."</tr>",
+	echo "<tr>".$aux["contato"]."</tr>",
+  echo "<tr>".$aux["redesocial"]."</tr>",
+	echo "<tr>".$aux["carronegociado"]."</tr>",
+  echo "<tr>".$aux["detalhesdenegociacao"]."</tr>",
+	echo "<tr>".$aux["vendedor"]."</tr>",
+  echo "<tr>".$aux["loja"]."</tr>",
+	echo "<tr>".$aux["canal"]."</tr>",
+  echo "<tr>".$aux["status"]."</tr>",
+  echo "</tbody>",
   echo "</table>";
 }
  
