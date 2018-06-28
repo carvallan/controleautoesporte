@@ -11,10 +11,6 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 	mysqli_error($cx) //caso haja um erro na consulta
 );
  
-//pecorrendo os registros da consulta.
-while($aux = mysqli_fetch_assoc($sql))
-{
-  echo "<table>";
   <thead>
     <tr>
       <th scope="col">Modelo</th>
@@ -28,6 +24,10 @@ while($aux = mysqli_fetch_assoc($sql))
         <th scope="col">Valor pré negociado</th>
     </tr>
    </thead>
+//pecorrendo os registros da consulta.
+while($aux = mysqli_fetch_assoc($sql))
+{
+  echo "<table>";
     echo "<tbody />";
   echo "<tr />";
       echo "<td>".$aux["nome"]."</td />";
