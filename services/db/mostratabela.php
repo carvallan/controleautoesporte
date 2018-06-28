@@ -12,10 +12,9 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 );
  
 //pecorrendo os registros da consulta.
-while($aux = mysqli_fetch_assoc($sql))
-{
+
   <table>
-      <thead>
+     <thead>
       <tr>
         <th scope="col">Modelo</th>
         <th scope="col">Marca</th>
@@ -28,6 +27,8 @@ while($aux = mysqli_fetch_assoc($sql))
         <th scope="col">Valor pré negociado</th>
       </tr>
     </thead>
+    while($aux = mysqli_fetch_assoc($sql))
+{
     echo "<tbody />";
       echo "<tr>".$aux["nome"]."</tr />";
       echo "<tr>".$aux["contato"]."</tr />";
