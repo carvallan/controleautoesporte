@@ -1,7 +1,7 @@
 <?php
 // Conexão ao banco
 
-$link = mysql_connect('mysql472.umbler.com','autoesporte','autoesporte1');
+$link = require_once 'conexao.php';
 
 // Seleciona o Banco de dados através da conexão acima
 
@@ -31,9 +31,21 @@ echo '<tr>';
 
 echo '<td>'.$registro["nome"].'</td>';
 
-echo '<td>'.$registro["telefone"].'</td>';
+echo '<td>'.$registro["contato"].'</td>';
 
-echo '<td>'.$registro["email"].'</td>';
+echo '<td>'.$registro["redesocial"].'</td>';
+
+echo '<td>'.$registro["carronegociado"].'</td>';
+
+echo '<td>'.$registro["detalhesdenegociacao"].'</td>';
+  
+echo '<td>'.$registro["vendedor"].'</td>';
+  
+echo '<td>'.$registro["loja"].'</td>';
+  
+echo '<td>'.$registro["canal"].'</td>';  
+  
+echo '<td>'.$registro["status"].'</td>';  
 
 echo '</tr>';
 
