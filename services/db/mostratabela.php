@@ -1,70 +1,30 @@
 <?php
-// Conexão ao banco
-
-$link = mysqli_connect('mysql472.umbler.com','autoesporte','autoesporte1');
-
-// Seleciona o Banco de dados através da conexão acima
-
-$conexao = mysqli_select_db($link,'dbautoesporte'); 
-
-if($conexao){
-
-$sql = "SELECT nome,contato,redesocial,carronegociado,detalhesdenegociacao,vendedor,loja,canal,status FROM clientes";
-
-$consulta = mysqli_query($sql);
-
-echo '<table>';
-
-echo '<tr>';
-
-echo '<td>Nome</td>';
-
-echo '<td>contato</td>';
-  
-echo '<td>redesocial</td>';
-  
-echo '<td>carronegociado</td>';
-  
-echo '<td>detalhesdenegociacao</td>';
-  
-echo '<td>vendedor</td>';
-    
-echo '<td>loja</td>';
-      
-echo '<td>canal</td>';
-  
-
-echo '</tr>';
-
-// Armazena os dados da consulta em um array associativo
-
-while($registro = mysqli_fetch_assoc($consulta)){
-
-echo '<tr>';
-
-echo '<td>'.$registro["nome"].'</td>';
-
-echo '<td>'.$registro["contato"].'</td>';
-
-echo '<td>'.$registro["redesocial"].'</td>';
-
-echo '<td>'.$registro["carronegociado"].'</td>';
-
-echo '<td>'.$registro["detalhesdenegociacao"].'</td>';
-  
-echo '<td>'.$registro["vendedor"].'</td>';
-  
-echo '<td>'.$registro["loja"].'</td>';
-  
-echo '<td>'.$registro["canal"].'</td>';  
-  
-
-echo '</tr>';
+ 
+//iniciando a conexão com o banco de dados
+$cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
+ 
+//selecionando o banco de dados
+$db = mysqli_select_db($cx, "dbautoesporte");
+ 
+//criando a query de consulta à tabela criada
+$sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
+	mysqli_error($cx) //caso haja um erro na consulta
+);
+ 
+//pecorrendo os registros da consulta.
+while($aux = mysqli_fetch_assoc($sql))
+{
+	echo "-----------------------------------------<br />";
+	echo "Nome:".$aux["nome"]."<br />";
+	echo "Idade:".$aux["contato"]."<br />";
+  echo "Nome:".$aux["redesocial"]."<br />";
+	echo "Idade:".$aux["carronegociado"]."<br />";
+  echo "Nome:".$aux["detalhesdenegociacao"]."<br />";
+	echo "Idade:".$aux["vendedor"]."<br />";
+  echo "Nome:".$aux["loja"]."<br />";
+	echo "Idade:".$aux["canal"]."<br />";
+  echo "Nome:".$aux["status"]."<br />";
 
 }
-
-echo '</table>';
-
-}
-
+ 
 ?>
