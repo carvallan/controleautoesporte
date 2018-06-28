@@ -25,7 +25,7 @@
             <a class="nav-link" href="login.html">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tabela.html">Lista de Contatos</a>
+                <a class="nav-link" href="/services/db/mostratabela.php">Lista de Contatos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="intermediacao.html">Lista de Intermediações</a>
@@ -76,19 +76,19 @@
         </tr>
       </thead>
       <tbody>
-
+<?php while($aux = mysqli_fetch_assoc($sql)) { ?>
         <tr>
-          <td>Versa</td>
-          <td>Nissan</td>
-          <td>SL</td>
-          <td>00</td>
-          <td>1.6</td>
-          <td>Gilmas</td>
-          <td>(13) 999999999</td>
-          <td>11111111111</td>
-          <td>00</td>
+          <td><?php echo $aux['nome']; ?></td>
+          <td><?php echo $aux['contato']; ?></td>
+          <td><?php echo $aux['redesocial']; ?></td>
+          <td><?php echo $aux['carronegociado']; ?></td>
+          <td><?php echo $aux['detalhesdenegociacao']; ?></td>
+          <td><?php echo $aux['vendedor']; ?></td>
+          <td><?php echo $aux['loja']; ?></td>
+          <td><?php echo $aux['canal']; ?></td>
+          <td><?php echo $aux['status']; ?></td>
         </tr>
-
+  <?php } ?>
       </tbody>
     </table>
 </body>
