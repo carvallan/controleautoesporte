@@ -14,7 +14,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 //pecorrendo os registros da consulta.
 while($aux = mysqli_fetch_assoc($sql))
 {
-  echo "<table>";
+  <table>
       <thead>
       <tr>
         <th scope="col">Modelo</th>
@@ -39,7 +39,7 @@ while($aux = mysqli_fetch_assoc($sql))
       echo "<tr>".$aux["canal"]."</tr />";
       echo "<tr>".$aux["status"]."</tr />";
     echo "</tbody />";
-  echo "</table />";
+  </table>
   
   
 }
