@@ -1,7 +1,7 @@
 <?php
 // Conexão ao banco
 
-$link = mysqli_connect('mysql472.umbler.com','autoesporte','autoesporte1') or die(mysql_error());
+$link = mysqli_connect('mysql472.umbler.com','autoesporte','autoesporte1');
 
 // Seleciona o Banco de dados através da conexão acima
 
