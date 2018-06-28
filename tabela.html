@@ -80,21 +80,21 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
     <tbody>
       
       <?php
-          while($aux = mysqli_fetch_assoc($sql))
-              {
-                    	echo "-----------------------------------------<br />";
-	echo "Nome:".$aux["nome"]."<br />";
-	echo "Idade:".$aux["contato"]."<br />";
-  echo "Nome:".$aux["redesocial"]."<br />";
-	echo "Idade:".$aux["carronegociado"]."<br />";
-  echo "Nome:".$aux["detalhesdenegociacao"]."<br />";
-	echo "Idade:".$aux["vendedor"]."<br />";
-  echo "Nome:".$aux["loja"]."<br />";
-	echo "Idade:".$aux["canal"]."<br />";
-  echo "Nome:".$aux["status"]."<br />";
-  
-              }
-      ?>
+/*Enquanto houver dados na tabela para serem mostrados será executado tudo que esta dentro do while */
+while($escrever=mysql_fetch_array($res)){
+
+/*Escreve cada linha da tabela*/
+echo “<tr><td>” . $aux[’login’] . “</td><td>” . $aux[’nome’] . “</td><td>” . $aux[’contato’] . “</td></tr>”;
+
+}/*Fim do while*/
+
+echo “</table>”; /*fecha a tabela apos termino de impressão das linhas*/
+
+mysql_close($cx);
+
+?>
+              
+      
       
       echo "<tr>
         <td> $aux[nome]Versa</td>

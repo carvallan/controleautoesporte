@@ -12,14 +12,15 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 );
  
 //pecorrendo os registros da consulta.
+
 while($aux = mysqli_fetch_assoc($sql))
 {
-  
-echo "<tr>\n";
-echo "<td>".$aux['nome']."</td>\n";
-echo "<td>".$aux['contato']."</td>\n";
-echo "<td>".$aux['redesocial']."</td>\n";
-echo "<td>".$aux['carronegociado']."</td>\n";
+echo "<tbody>"
+echo "<tr class="">\n";
+echo "<td class="">".$aux['nome']."</td>\n";
+echo "<td class="">".$aux['contato']."</td>\n";
+echo "<td class="">".$aux['redesocial']."</td>\n";
+echo "<td class="">".$aux['carronegociado']."</td>\n";
 echo "<td>".$aux['detalhesdenegociacao']."</td>\n";
 echo "<td>".$aux['vendedor']."</td>\n";
 echo "<td>".$aux['loja']."</td>\n";
