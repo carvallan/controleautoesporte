@@ -14,7 +14,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 //pecorrendo os registros da consulta.
 while($aux = mysqli_fetch_assoc($sql))
 {
-  echo "<table class="table table-hover bg-light">";
+  echo "<table /class="table table-hover bg-light">/";
     echo "<tbody />";
       echo "<tr>".$aux["nome"]."</tr />";
       echo "<tr>".$aux["contato"]."</tr />";
