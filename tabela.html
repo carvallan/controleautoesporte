@@ -76,19 +76,19 @@
         </tr>
       </thead>
       <tbody>
-<?php while($aux = mysqli_fetch_assoc($sql)) { ?>
-        <tr>
-          <td><?php echo $aux['nome']; ?></td>
-          <td><?php echo $aux['contato']; ?></td>
-          <td><?php echo $aux['redesocial']; ?></td>
-          <td><?php echo $aux['carronegociado']; ?></td>
-          <td><?php echo $aux['detalhesdenegociacao']; ?></td>
-          <td><?php echo $aux['vendedor']; ?></td>
-          <td><?php echo $aux['loja']; ?></td>
-          <td><?php echo $aux['canal']; ?></td>
-          <td><?php echo $aux['status']; ?></td>
-        </tr>
-  <?php } ?>
+<?php while($aux = mysqli_fetch_assoc($sql)) { 
+       echo "<tr>
+          <td>" . $aux['nome'] . "</td>
+          <td>" . $aux['contato'] . "</td>
+          <td>" . $aux['redesocial'] . "</td>
+          <td>" . $aux['carronegociado'] . "</td>
+          <td>" . $aux['detalhesdenegociacao'] . "</td>
+          <td>" . $aux['vendedor'] . "</td>
+          <td>" . $aux['loja'] . "</td>
+          <td>" . $aux['canal'] . "</td>
+          <td>" . $aux['status'] . "</td>
+        </tr>";
+?>
       </tbody>
     </table>
 </body>
