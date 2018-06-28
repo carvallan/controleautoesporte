@@ -78,15 +78,15 @@
       <tbody>
 <?php while($aux = mysqli_fetch_assoc($sql)) { 
        echo "<tr>
-          <td>" . $aux['nome'] . "</td>
-          <td>" . $aux['contato'] . "</td>
-          <td>" . $aux['redesocial'] . "</td>
-          <td>" . $aux['carronegociado'] . "</td>
-          <td>" . $aux['detalhesdenegociacao'] . "</td>
-          <td>" . $aux['vendedor'] . "</td>
-          <td>" . $aux['loja'] . "</td>
-          <td>" . $aux['canal'] . "</td>
-          <td>" . $aux['status'] . "</td>
+          <td>$aux['nome']</td>
+          <td>$aux['contato']</td>
+          <td>$aux['redesocial']</td>
+          <td>$aux['carronegociado']</td>
+          <td>$aux['detalhesdenegociacao']</td>
+          <td>$aux['vendedor']</td>
+          <td>$aux['loja']</td>
+          <td>$aux['canal']</td>
+          <td>$aux['status']</td>
         </tr>";
 ?>
       </tbody>
