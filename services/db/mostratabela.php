@@ -5,12 +5,11 @@ $link = mysqli_connect('mysql472.umbler.com','autoesporte','autoesporte1');
 
 // Seleciona o Banco de dados através da conexão acima
 
-$db = mysqli_select_db($link, "dbautoesporte");
+$conexao = mysqli_select_db('dbautoesporte',$link); if($link, $conexao){
 
 $sql = "SELECT nome,contato,redesocial,carronegociado,detalhesdenegociacao,vendedor,loja,canal,status FROM clientes";
 
 $consulta = mysqli_query($sql);
-
 
 echo '<table>';
 
