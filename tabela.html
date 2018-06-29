@@ -1,3 +1,13 @@
+<?php
+ require_once 'conexao.php';
+ 
+require_once 'crud.php';
+ 
+$con = new conexao(); // instancia classe de conexão
+ 
+$con->connect(); // abre conexao com o banco
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -57,10 +67,28 @@
       </tr>
     </thead>
     <tbody>
-
-
+   <?php
+      $consulta = mysql_query("SELECT * FROM clientes"); // query que busca todos os dados da tabela clientes
+        while($campo = mysql_fetch_array($consulta)){ // laço de repetiçao que vai trazer todos os resultados da consulta
+   ?>
+  <tr>
+ 
+<td>
+ 
+<?php echo $campo['nome']; // mostrando o campo NOME da tabela ?>
+ 
+</td>
+ 
+<td>
+ 
+<?php echo $campo['contato']; // mostrando o campo contato da tabela ?>
+ 
+</td>
+ 
+<td>
     </tbody>
   </table>
 </body>
 
 </html>
+<?php $con->disconnect(); // fecha conexao com o banco ?>
