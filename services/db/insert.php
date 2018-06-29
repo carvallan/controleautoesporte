@@ -35,38 +35,26 @@
  
 			if ($redesocial == ''):
 				$mensagem .= '<li>Favor preencher a rede social.</li>';
-			elseif(!filter_var($redesocial, FILTER_VALIDATE_EMAIL)):
-				  $mensagem .= '<li>Formato da rede social inválida.</li>';
 			endif;
       
       if ($carronegociado == ''):
-				$mensagem .= '<li>Favor preencher qual carro foi negociado.</li>';
-			elseif(!filter_var($carronegociado, FILTER_VALIDATE_EMAIL)):
-				  $mensagem .= '<li>Formato inválido.</li>';
+				$mensagem .= '<li>Favor preencher qual carro foi negociado.</li>';			
 			endif;
 
       if ($detalhesdenegociacao == ''):
 				$mensagem .= '<li>Favor preencher os detalhes da negociação.</li>';
-			elseif(!filter_var($detalhesdenegociacao, FILTER_VALIDATE_EMAIL)):
-				  $mensagem .= '<li>Formato inválido.</li>';
 			endif;
 
       if ($vendedor == ''):
 				$mensagem .= '<li>Favor preencher o nome do vendedor.</li>';
-			elseif(!filter_var($vendedor, FILTER_VALIDATE_EMAIL)):
-				  $mensagem .= '<li>Formato inválida.</li>';
 			endif;
       
       if ($loja == ''):
-				$mensagem .= '<li>Favor preencher o campo loja.</li>';
-			elseif(!filter_var($loja, FILTER_VALIDATE_EMAIL)):
-				  $mensagem .= '<li>Formato inválido.</li>';
+				$mensagem .= '<li>Favor preencher o campo loja.</li>';			
 			endif;
       
       if ($canal == ''):
 				$mensagem .= '<li>Favor preencher o campo canal.</li>';
-			elseif(!filter_var($loja, FILTER_VALIDATE_EMAIL)):
-				  $mensagem .= '<li>Formato nválida.</li>';
 			endif;
  
 			if ($status == ''):
@@ -158,14 +146,6 @@
         die("ERROR: Could not able to execute $sql. " . $e->getMessage());
     }
 
-    unset($pdo);
-    
-  if ($retorno):
-				echo "<div class='alert alert-success' role='alert'>Registro inserido com sucesso, aguarde você está sendo redirecionado ...</div> ";
-		    else:
-		    	echo "<div class='alert alert-danger' role='alert'>Erro ao inserir registro!</div> ";
-			endif;
- 
-			echo "<meta http-equiv=refresh content='3;URL=index.html'>";
-		endif;
+    unset($pdo);   
+  
 ?>
