@@ -16,7 +16,7 @@ while($aux = mysqli_fetch_assoc($sql))
 
   echo "<table class="table table-hover bg-light"/>";
    echo "<thead/>";
-      echo "<tr>";
+      echo "<tr/>";
         echo  "<th scope="col"/>"Modelo"</th/>";
        echo "<th scope="col"/>"Marca"</th/>";
        echo "<th scope="col"/>"Versão"</th/>";
