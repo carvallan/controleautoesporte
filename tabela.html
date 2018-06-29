@@ -65,7 +65,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
       </tr>
     </thead>
     <tbody>
-       <?php  while ($dado = $con->fetch_array()){ ?>
+       <?php  while ($dado = $con->fatch_array()){ ?>
       <tr>
         <td><?php echo $dado["nome"]; ?></td>
         <td><?php echo $dado["contato"]; ?></td>
