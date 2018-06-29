@@ -1,9 +1,7 @@
 <?php
   iclude(services/db/conexao.php);
   $consulta = "SELECT * FROM clientes";
-$sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
-	mysqli_error($cx) //caso haja um erro na consulta
-); 
+  $con = $mysqli->query($consulta) or die($mysqli->error);  
 ?>
 
 <!DOCTYPE html>
@@ -65,13 +63,20 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
       </tr>
     </thead>
     <tbody>
-       <?php  while ($dado = $con->fatch_array()){ ?>
+   <?php  while ($dado = $con->fetch_array()){ ?>
+  
       <tr>
         <td><?php echo $dado["nome"]; ?></td>
         <td><?php echo $dado["contato"]; ?></td>
         <td><?php echo $dado["redesocial"]; ?></td>
- 
-      </tr>      
+        <td><?php echo $dado["carronegociado"]; ?></td>
+        <td><?php echo $dado["detalhesdenegociacao"]; ?></td>
+        <td><?php echo $dado["vendedor"]; ?></td>
+        <td><?php echo $dado["loja"]; ?></td>
+        <td><?php echo $dado["canal"]; ?></td>
+        <td><?php echo $dado["status"]; ?></td>
+      </tr>
+      
     </tbody>
     <?php }?>
   </table>
