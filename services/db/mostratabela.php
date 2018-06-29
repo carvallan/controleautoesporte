@@ -27,7 +27,7 @@ while($aux = mysqli_fetch_assoc($sql))
         echo "<th scope="col"/>"Detalhes da Negociação"</th>"
         echo "<th scope="col"/>"Valor pré negociado"</th>"
       echo "</tr/>"
-    echo </thead>
+    echo "</thead/>"
     echo "<tbody />";
   echo "<tr />";
       echo "<td class="">".$aux["nome"]."</td /><br />";

@@ -1,4 +1,8 @@
-
+<?php
+  iclude(services/db/conexao.php);
+  $consulta = "SELECT * FROM clientes";
+  $con = $mysqli->query($consulta) or die($mysqli->error);  
+?>
 
 <!DOCTYPE html>
 
@@ -44,11 +48,6 @@
     </nav>
   </div>
   </div>
-  <?php
-  iclude(services/db/conexao.php);
-  $consulta = "SELECT * FROM clientes";
-  $con = $mysqli->query($consulta) or die($mysqli->error);  
-?>
   <table class="table table-hover bg-light">
     <thead>
       <tr>
