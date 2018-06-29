@@ -13,22 +13,24 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 //pecorrendo os registros da consulta.
 while($aux = mysqli_fetch_assoc($sql))
 {
-  echo "<table />";  
-    echo "<tbody />";
-  echo "<tr />";
-      echo "<td>".$aux["nome"]."</td /><br />";
-      echo "<td>".$aux["contato"]."</td /><br />";
-      echo "<td>".$aux["redesocial"]."</td /><br />";
-      echo "<td>".$aux["carronegociado"]."</td /><br />";
-      echo "<td>".$aux["detalhesdenegociacao"]."</td /><br />";
-      echo "<td>".$aux["vendedor"]."</td /><br />";
-      echo "<td>".$aux["loja"]."</td /><br />";
-      echo "<td>".$aux["canal"]."</td /><br />";
-      echo "<td>".$aux["status"]."</td /><br />";
-  echo "</tr />";
-    echo "</tbody />";
-  echo "</table />";  
-
-}
- 
 ?>
+<html>
+  <table >
+   <tbody >
+  <tr >
+     <td><?php echo $aux["nome"] ; ?></td >
+      <td><?php echo $aux["contato"] ; ?></td >
+      <td><?php echo $aux["redesocial"] ; ?></td>
+      <td><?php echo $aux["carronegociado"] ; ?></td >
+      <td><?php echo $aux["detalhesdenegociacao"] ; ?></td >
+       <td><?php echo $aux["vendedor"] ;?></td >
+     <td><?php echo $aux["loja"] ; ?></td >
+       <td><?php echo $aux["canal"] ; ?></td >
+       <td><?php echo $aux["status"] ; ?></td >
+   </tr >
+     </tbody >
+   </table > 
+
+</html>
+ 
+<?php }?>
