@@ -1,7 +1,9 @@
 <?php
   iclude(services/db/conexao.php);
   $consulta = "SELECT * FROM clientes";
-  $con = $mysqli->query($consulta) or die($mysqli->error);  
+$sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
+	mysqli_error($cx) //caso haja um erro na consulta
+); 
 ?>
 
 <!DOCTYPE html>
