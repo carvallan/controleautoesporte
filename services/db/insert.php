@@ -14,7 +14,12 @@
     $criado = date("Y-m-d H:i:s", $phptime);
     $modificado = date("Y-m-d H:i:s", $phptime);
     
-
+    // validação (bem simples, só pra evitar dados vazios)
+if (empty($nome) || empty($contato) || empty($redesocial) || empty($carronegociado) || empty($detalhesdenegociacao) || empty($vendedor) || empty($loja) || empty($canal) || empty($status))
+{
+    echo "Volte e preencha todos os campos";
+    exit;
+}
     require_once 'conexao.php';
 
     // Attempt insert query execution
