@@ -35,6 +35,7 @@
  
 			if ($redesocial == ''):
 				$mensagem .= '<li>Favor preencher a rede social.</li>';
+
 			endif;
       
       if ($carronegociado == ''):
@@ -146,6 +147,14 @@
         die("ERROR: Could not able to execute $sql. " . $e->getMessage());
     }
 
-    unset($pdo);   
-  
+    unset($pdo);
+    
+  if ($retorno):
+				echo "<div class='alert alert-success' role='alert'>Registro inserido com sucesso, aguarde você está sendo redirecionado ...</div> ";
+		    else:
+		    	echo "<div class='alert alert-danger' role='alert'>Erro ao inserir registro!</div> ";
+			endif;
+ 
+			echo "<meta http-equiv=refresh content='3;URL=index.html'>";
+		endif;
 ?>

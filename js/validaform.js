@@ -45,7 +45,7 @@ function validaCadastro(evt){
 		caixa_contato.innerHTML = "Favor preencher o contato";
 		caixa_contato.style.display = 'block';
 		contErro += 1;
-	}else if(filtro.test(email.value)){
+	}else if(filtro.test(contato.value)){
 		caixa_contato.style.display = 'none';
 	}else{
 		caixa_contato.innerHTML = "Formato do contato inválido";
