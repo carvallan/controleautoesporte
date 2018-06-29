@@ -70,12 +70,12 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
           <th scope="col">Valor pré negociado</th>
         </tr>
       </thead>
-      <tbody>
-        <?php
+              <?php
 //pecorrendo os registros da consulta.
 while($aux = mysqli_fetch_assoc($sql))
 {
 ?>
+      <tbody>
           <tr>
             <td>
               <?php echo $aux["nome"]; ?>
