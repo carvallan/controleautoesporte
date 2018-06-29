@@ -14,7 +14,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 while($aux = mysqli_fetch_assoc($sql))
 {
 
-  echo "<table>";
+  echo "<table/>";
    echo "<thead/>";
       echo "<tr/>";
         echo  "<th scope="col"/>"Modelo"</th/>";
