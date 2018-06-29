@@ -12,8 +12,11 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 );
 
 ?>
-
+<!doctype html>
 <html>
+  <body>
+    
+
    <?php while ($aux = mysqli_fetch_assoc($sql)): ?>
     <table>
     <tbody >
@@ -25,5 +28,5 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
   </tr >
    </tbody>
   </table>
-
+      </body>
 </html>
