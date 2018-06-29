@@ -1,11 +1,12 @@
 <?php
- require_once 'conexao.php';
+ <?php
  
-require_once 'index.php';
+//iniciando a conexão com o banco de dados
+$cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
  
-$con = new conexao(); // instancia classe de conexão
- 
-$con->connect(); // abre conexao com o banco
+//selecionando o banco de dados
+$db = mysqli_select_db($cx, "dbautoesporte");
+
 ?>
 
 <!DOCTYPE html>
@@ -67,21 +68,23 @@ $con->connect(); // abre conexao com o banco
       </tr>
     </thead>
     <tbody>
-   <?php
-      $consulta = mysql_query("SELECT * FROM clientes"); // query que busca todos os dados da tabela clientes
-        while($campo = mysql_fetch_array($consulta)){ // laço de repetiçao que vai trazer todos os resultados da consulta
+   <?php      
+      //criando a query de consulta à tabela criada
+      $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
+	    mysqli_error($cx) //caso haja um erro na consulta
+      );
    ?>
   <tr>
  
 <td>
  
-<?php echo $campo['nome']; // mostrando o campo NOME da tabela ?>
+<?php .$aux["nome"]. ?>
  
 </td>
  
 <td>
  
-<?php echo $campo['contato']; // mostrando o campo contato da tabela ?>
+<?php .$aux["contato"]. ?> ?>
  
 </td>
  
@@ -90,4 +93,4 @@ $con->connect(); // abre conexao com o banco
 </body>
 
 </html>
-<?php $con->disconnect(); // fecha conexao com o banco ?>
+<?php $cx->disconnect(); // fecha conexao com o banco ?>
