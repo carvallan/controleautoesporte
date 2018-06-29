@@ -27,9 +27,12 @@ while($aux = mysqli_fetch_assoc($sql))
       echo "<td>".$aux["status"]."</td />\n";
   echo "</tr />";
     echo "</tbody />";
-  echo "</table />";
-  
-  
+  echo "</table />";  
 }
  
 ?>
+
+<html>
+  <button>Alterar</button>
+
+</html>
