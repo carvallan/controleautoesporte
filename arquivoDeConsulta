@@ -97,6 +97,8 @@ http://www.devwilliam.com.br/php/consulta-sistema-de-cadastro-com-php-pdo-e-mysq
 
 http://www.devwilliam.com.br/php/inclusao-sistema-de-cadastro-com-php-pdo-e-mysql
 
+http://blog.ultimatephp.com.br/sistema-de-cadastro-php-mysql-pdo/
+
 
 		// Valida os dados recebidos
 		$mensagem = '';

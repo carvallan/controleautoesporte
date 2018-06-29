@@ -13,6 +13,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 //pecorrendo os registros da consulta.
 while($aux = mysqli_fetch_assoc($sql))
 {
+<html>  
   echo "<table>";
     echo "<tbody />";
   echo "<tr />";
@@ -28,6 +29,7 @@ while($aux = mysqli_fetch_assoc($sql))
   echo "</tr />";
     echo "</tbody />";
   echo "</table />";  
+</html>
 }
  
 ?>
