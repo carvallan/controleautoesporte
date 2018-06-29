@@ -1,3 +1,8 @@
+<?php
+require 'conexao.php';
+require 'update.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,15 +62,15 @@
     </thead>
     <tbody>
       <tr>
-        <td>Versa</td>
-        <td>Nissan</td>
-        <td>SL</td>
-        <td>00</td>
-        <td>1.6</td>
-        <td>Gilmas</td>
-        <td>(13) 999999999</td>
-        <td>11111111111</td>
-        <td>00</td>
+        <td><?php echo $clientes['nome'] ?></td>
+        <td><?php echo $clientes['contato'] ?></td>
+        <td><?php echo $clientes['redesocial'] ?></td>
+        <td><?php echo $clientes['carronegociado'] ?></td>
+        <td><?php echo $clientes['detalhesdenegociacao'] ?></td>
+        <td><?php echo $clientes['vendedor'] ?></td>
+        <td><?php echo $clientes['loja'] ?></td>
+        <td><?php echo $clientes['canal'] ?></td>
+        <td><?php echo $clientes['status'] ?></td>
       </tr>
     </tbody>
   </table>
