@@ -10,8 +10,8 @@ $db = mysqli_select_db($cx, "dbautoesporte");
 $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 	mysqli_error($cx) //caso haja um erro na consulta
 );
-
 ?>
+
 <!doctype html>
 <html>
   <body>
@@ -20,12 +20,13 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
    <?php while ($aux = mysqli_fetch_assoc($sql)): ?>
     <table>
     <tbody >
-  <tr >
+  <tr>
      <td><?php echo $clientes['name'] ?></td >
       <td><?php echo $clientes['contato'] ?></td >
       <td><?php echo $clientes['redesocial'] ?></td >
       <td><?php echo $clientes['carronegociado'] ?></td >
-  </tr >
+  </tr>
+       <?php endwhile; ?>
    </tbody>
   </table>
       </body>
