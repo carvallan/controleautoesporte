@@ -13,7 +13,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 ?>
 
 <html>
-  <table >
+  <table class="table table-hover bg-light">
     <thead>
 
       <tr>
