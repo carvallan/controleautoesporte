@@ -65,18 +65,35 @@
     <tbody>
    <?php  while ($dado = $con->fetch_array()){ ?>
   
-  <tr>
- 
-<td>
-<?php echo $dado["nome"]; ?>
- 
-</td>
- 
-<td>
-
- <?php echo $dado["contato"]; ?>
-</td>
- 
+      <tr>
+        <td>
+        <?php echo $dado["nome"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["contato"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["redesocial"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["carronegociado"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["detalhesdenegociacao"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["vendedor"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["loja"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["canal"]; ?>
+        </td>
+        <td>
+         <?php echo $dado["status"]; ?>
+        </td>
+      </tr>
     </tbody>
     <?php }?>
   </table>
