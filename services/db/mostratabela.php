@@ -16,6 +16,7 @@ while($aux = mysqli_fetch_assoc($sql))
 ?>
 <html>
   <table >
+    
    <tbody >
   <tr >
      <td><?php echo $aux["nome"] ; ?></td >
