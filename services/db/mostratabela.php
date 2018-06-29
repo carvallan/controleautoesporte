@@ -28,7 +28,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
       <td><?php echo $clientes['redesocial']; ?></td >
       <td><?php echo $clientes['carronegociado']; ?></td >
   </tr>
-       <?php endwhile; ?>
+
    </tbody>
   </table>
       </body>
