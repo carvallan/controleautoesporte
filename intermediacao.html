@@ -1,6 +1,6 @@
 <?php
-require 'conexao.php';
-require 'update.php';
+require 'mostratabela.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +48,7 @@ require 'update.php';
   </div>
   <table class="table table-hover bg-light">
     <thead>
+
       <tr>
         <th scope="col">Modelo</th>
         <th scope="col">Marca</th>
@@ -61,8 +62,9 @@ require 'update.php';
       </tr>
     </thead>
     <tbody>
+      <?php while ($clientes = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
       <tr>
-        <td>Versa</td>
+        <td><?php echo $clientes['nome'] ?></td>
         <td>Nissan</td>
         <td>SL</td>
         <td>00</td>
