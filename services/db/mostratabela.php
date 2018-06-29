@@ -10,10 +10,8 @@ $db = mysqli_select_db($cx, "dbautoesporte");
 $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 	mysqli_error($cx) //caso haja um erro na consulta
 );
-//pecorrendo os registros da consulta.
-while($aux = mysqli_fetch_assoc($sql))
-{
 ?>
+
 <html>
   <table >
     <thead>
@@ -31,6 +29,11 @@ while($aux = mysqli_fetch_assoc($sql))
       </tr>
     </thead>
    <tbody >
+     <?php
+//pecorrendo os registros da consulta.
+while($aux = mysqli_fetch_assoc($sql))
+{
+?>
   <tr >
      <td><?php echo $aux["nome"] ; ?></td >
       <td><?php echo $aux["contato"] ; ?></td >
