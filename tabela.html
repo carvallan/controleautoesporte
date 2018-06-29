@@ -63,9 +63,10 @@
       </tr>
     </thead>
     <tbody>
-   <?php  while ($dado = $con->fetch_array()){ ?>
+
   
       <tr>
+           <?php  while ($dado = $con->fetch_array()){ ?>
         <td><?php echo $dado["nome"]; ?></td>
         <td><?php echo $dado["contato"]; ?></td>
         <td><?php echo $dado["redesocial"]; ?></td>
