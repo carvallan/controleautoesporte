@@ -13,6 +13,15 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 ?>
 
 <html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de cliente</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/mainindex.css">
+  </head>
+  <body>
+   
   <table class="table table-hover bg-light">
     <thead>
 
@@ -47,7 +56,7 @@ while($aux = mysqli_fetch_assoc($sql))
    </tr >
      </tbody >
    </table > 
-
+</body>
 </html>
  
 <?php }?>
