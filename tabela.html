@@ -1,12 +1,7 @@
-
- <?php
- 
-//iniciando a conexão com o banco de dados
-$cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
- 
-//selecionando o banco de dados
-$db = mysqli_select_db($cx, "dbautoesporte");
-
+<?php
+  iclude(services/db/conexao.php);
+  $consulta = "SELECT * FROM clientes";
+  $con = $mysqli->query($consulta) or die($mysqli->error);  
 ?>
 
 <!DOCTYPE html>
@@ -68,27 +63,22 @@ $db = mysqli_select_db($cx, "dbautoesporte");
       </tr>
     </thead>
     <tbody>
-   <?php      
-      //criando a query de consulta à tabela criada
-      $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
-	    mysqli_error($cx) //caso haja um erro na consulta
-      );
-   ?>
+   <?php  while ($dado = $con->fetch_array()){ ?>
+  
   <tr>
  
 <td>
- 
-<?php .$aux["nome"]. ?>
+<?php echo $dado["nome"]; ?>
  
 </td>
  
 <td>
- aaaaaaaa
-<?php .$aux["contato"]. ?> 
- 
+
+ <?php echo $dado["contato"]; ?>
 </td>
  
     </tbody>
+    <?php }?>
   </table>
 </body>
 
