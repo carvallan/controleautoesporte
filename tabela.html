@@ -1,32 +1,3 @@
-<?php
-require 'conexao.php';
-require 'update.php';
-  
-// valida o ID
-if (empty($id))
-{
-    echo "ID para alteração não definido";
-    exit;
-}
- 
-// busca os dados du usuário a ser editado
-$PDO = db_connect();
-$sql = "SELECT * FROM clientes WHERE id = :id";
-$stmt = $PDO->prepare($sql);
-$stmt->bindParam(':id', $id, PDO::PARAM_INT);
- 
-$stmt->execute();
- 
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
- 
-// se o método fetch() não retornar um array, significa que o ID não corresponde a um usuário válido
-if (!is_array($user))
-{
-    echo "Nenhum usuário encontrado";
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">
