@@ -76,60 +76,16 @@ while($aux = mysqli_fetch_assoc($sql))
 ?>
       <tbody>
           <tr>
-            <th class="row"></th>
-            <td>
-              <?php echo $aux["nome"]; ?>
-            </td>
-            </tr>
-        <tr>
-            <th class="row"></th>
-            <td>
-              <?php echo $aux["contato"]; ?>
-            </td>
+            <td><?php echo $aux["nome"]; ?></td>
+            <td><?php echo $aux["contato"]; ?></td>
+            <td><?php echo $aux["redesocial"]; ?></td>
+            <td><?php echo $aux["carronegociado"]; ?></td>
+            <td><?php echo $aux["detalhesdenegociacao"]; ?></td>
+            <td><?php echo $aux["vendedor"]; ?></td>
+            <td><?php echo $aux["loja"]; ?></td>
+            <td><?php echo $aux["canal"]; ?></td>
+            <td><?php echo $aux["status"]; ?></td>
           </tr>
-        <tr>
-            <th class="row"></th>
-            <td>
-              <?php echo $aux["redesocial"]; ?>
-            </td>
-          </tr>
-        <tr>
-            <th class="row"></th>
-            <td>
-              <?php echo $aux["carronegociado"]; ?>
-            </td>
-          </tr>
-        <tr>
-          <th class="row"></th>
-            <td>
-              <?php echo $aux["detalhesdenegociacao"]; ?>
-            </td>
-          </tr>
-        <tr>
-          <th class="row"></th>
-            <td>
-              <?php echo $aux["vendedor"]; ?>
-            </td>
-          </tr>
-        <tr>
-          <th class="row"></th>
-            <td>
-              <?php echo $aux["loja"]; ?>
-            </td>
-          </tr>
-        <tr>
-          <th class="row"></th>
-            <td>
-              <?php echo $aux["canal"]; ?>
-            </td>
-          </tr>
-        <tr>
-          <th class="row"></th>
-            <td>
-              <?php echo $aux["status"]; ?>
-            </td>
-          </tr>
-  
       </tbody>
     </table>
   </body>
