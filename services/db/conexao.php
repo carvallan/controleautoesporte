@@ -17,7 +17,8 @@
         // $pdo->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
         $sql = "use dbautoesporte";
         $pdo->exec($sql);
-       echo "Dado inserido com sucesso!";
+      header( 'refresh: 5; url = https://controleautoesporte-com-br.umbler.net/tabela.html' );
+echo 'Dado inserido com sucesso!';
     } catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
     }
