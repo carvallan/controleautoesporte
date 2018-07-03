@@ -1,3 +1,16 @@
+<?php
+ 
+//iniciando a conexão com o banco de dados
+$cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
+ 
+//selecionando o banco de dados
+$db = mysqli_select_db($cx, "dbautoesporte");
+ 
+//criando a query de consulta à tabela criada
+$sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
+	mysqli_error($cx) //caso haja um erro na consulta
+);
+?>
 
 <!DOCTYPE html>
 
