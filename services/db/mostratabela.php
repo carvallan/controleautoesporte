@@ -78,31 +78,31 @@ while($aux = mysqli_fetch_assoc($sql))
           <tr>
             <td>
               <?php echo $aux["nome"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["contato"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["redesocial"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["carronegociado"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["detalhesdenegociacao"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["vendedor"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["loja"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["canal"]; ?>
-            </td>
+            </td><br>
             <td>
               <?php echo $aux["status"]; ?>
-            </td>
+            </td><br>
           </tr>
       </tbody>
     </table>
