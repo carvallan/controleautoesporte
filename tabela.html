@@ -58,28 +58,7 @@
       </tr>
     </thead>
     <tbody>
-   <?php  while ($dado = $con->fetch_array()){ ?>
-  
-      <tr>
-        <td><?php echo $dado["nome"]; ?></td><br>
-        <td><?php echo $dado["contato"]; ?></td><br>
-        <td><?php echo $dado["redesocial"]; ?></td><br>
-        <td><?php echo $dado["carronegociado"]; ?></td><br>
-        <td><?php echo $dado["detalhesdenegociacao"]; ?></td><br>
-        <td><?php echo $dado["vendedor"]; ?></td><br>
-        <td><?php echo $dado["loja"]; ?></td><br>
-        <td><?php echo $dado["canal"]; ?></td><br>
-        <td><?php echo $dado["status"]; ?></td><br>
-      </tr>
-      
-    </tbody>
-        <?php
-            iclude(services/db/conexao.php);
-            $consulta = "SELECT * FROM clientes";
-            $con = $mysqli->query($consulta) or die($mysqli->error);  
 
-            
-         ?>
         <?php
     // Bloco que realiza o papel do Read - recupera os dados e apresenta na tela
     try {
@@ -100,7 +79,7 @@
         echo "Erro: ".$erro->getMessage();
     }
     ?>
-
+    </tbody>
     
   </table>
 </body>
