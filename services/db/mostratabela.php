@@ -73,6 +73,7 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
 //pecorrendo os registros da consulta.
 while($aux = mysqli_fetch_assoc($sql))
 {
+?>
       <tbody>
           <tr>
             <td>
@@ -109,4 +110,4 @@ while($aux = mysqli_fetch_assoc($sql))
 
   </html>
 
- }?>
+  <?php }?>
