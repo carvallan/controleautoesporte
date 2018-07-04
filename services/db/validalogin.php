@@ -18,7 +18,7 @@ if($btnLogin){
 				$_SESSION['id'] = $row_usuario['id'];
 				$_SESSION['nome'] = $row_usuario['nome'];
 				$_SESSION['email'] = $row_usuario['email'];
-				header("Location: index.html");
+				header("Location: https://controleautoesporte-com-br.umbler.net/index.html");
 			}else{
 				$_SESSION['msg'] = "Login e senha incorreto!";
 				header("Location: login.php");
