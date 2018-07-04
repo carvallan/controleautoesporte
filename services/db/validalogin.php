@@ -1,22 +1,25 @@
 <?php
     session_start(); 
         //Incluindo a conexão com banco de dados   
-    include_once("conexao.php");    
+    $cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");    
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['nome'])) && (isset($_POST['senha']))){
-        $usuario = mysqli_real_escape_string($pdo, $_POST['nome']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
-        $senha = mysqli_real_escape_string($pdo, $_POST['senha']);
+        $usuario = mysqli_real_escape_string($cx, $_POST['nome']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
+        $senha = mysqli_real_escape_string($cx, $_POST['senha']);
         $senha = md5($senha);
             
         //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
         $result_usuario = "SELECT * FROM usuarios WHERE nome = '$usuario' && senha = '$senha' LIMIT 1";
-        $resultado_usuario = mysqli_query($pdo, $result_usuario);
+        $resultado_usuario = mysqli_query($cx, $result_usuario);
         $resultado = mysqli_fetch_assoc($resultado_usuario);
         
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         if(isset($resultado)){
             $_SESSION['usuarioId'] = $resultado['id'];
             $_SESSION['usuarioNome'] = $resultado['nome'];
+            $_SESSION['usuarioSenha'] = $resultado['senha'];
+            $_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
+            $_SESSION['usuarioEmail'] = $resultado['email'];
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
                 header("Location: administrativo.php");
             }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
@@ -28,7 +31,7 @@
         //redireciona o usuario para a página de login
         }else{    
             //Váriavel global recebendo a mensagem de erro
-            $_SESSION['loginErro'] = "Usuário ou senha incorretos";
+            $_SESSION['loginErro'] = "Usuário ou senha Incorretos";
             header("Location: login.php");
         }
     //O campo usuário e senha não preenchido entra no else e redireciona o usuário para a página de login
