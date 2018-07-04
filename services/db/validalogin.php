@@ -3,9 +3,6 @@
         //Incluindo a conexão com banco de dados   
     //iniciando a conexão com o banco de dados
 $cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
- 
-//selecionando o banco de dados
-$db = mysqli_select_db($cx, "dbautoesporte"); 
 
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['nome'])) && (isset($_POST['senha']))){
