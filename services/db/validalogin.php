@@ -1,43 +1,46 @@
 <?php
     session_start(); 
-        //Incluindo a conexão com banco de dados   
-    $cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");   
+      // Verifica se houve POST e se o usuário ou a senha é(são) vazio(s)
+  if (!empty($_POST) AND (empty($_POST['usuario']) OR empty($_POST['senha']))) {
+      header("Location: index.php"); exit;
+  }
+    
+  // Tenta se conectar ao servidor MySQL
+  mysql_connect("mysql:host=mysql472.umbler.com", "autoesporte", "autoesporte1") or trigger_error(mysql_error());
+  // Tenta se conectar a um banco de dados MySQL
+  mysql_select_db('usuarios') or trigger_error(mysql_error());
+    
+  $usuario = mysql_real_escape_string($_POST['usuario']);
+  $senha = mysql_real_escape_string($_POST['senha']);
+    
+  // Validação do usuário/senha digitados
+  $sql = "SELECT `id`, `nome`, `niveis_acesso_id` FROM `usuarios` WHERE (`usuario` = '".$usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
+  $query = mysql_query($sql);
+  if (mysql_num_rows($query) != 1) {
+      // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
+      echo "Login inválido!"; exit;
+  } else {
+      // Salva os dados encontados na variável $resultado
+      $resultado = mysql_fetch_assoc($query);
+  }
+// 
 
-    //O campo usuário e senha preenchido entra no if para validar
-    if((isset($_POST['nome'])) && (isset($_POST['senha']))){
-        $usuario = mysqli_real_escape_string($cx, $_POST['nome']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
-        $senha = mysqli_real_escape_string($cx, $_POST['senha']);
-        $senha = md5($senha);
-            
-        //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
-        $result_usuario = "SELECT * FROM usuarios WHERE nome = '$usuario' && senha = '$senha' LIMIT 1";
-        $resultado_usuario = mysqli_query($cx, $result_usuario);
-        $resultado = mysqli_fetch_assoc($resultado_usuario);
-        
-        //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
-        if(isset($resultado)){
-            $_SESSION['id'] = $resultado['id'];
-            $_SESSION['nome'] = $resultado['nome'];
-            $_SESSION['senha'] = $resultado['senha'];
-            $_SESSION['niveis_acesso_id'] = $resultado['niveis_acesso_id'];
-            $_SESSION['email'] = $resultado['email'];
-            if($_SESSION['niveis_acesso_id'] == "1"){
-                header("Location: administrativo.php");
-            }elseif($_SESSION['niveis_acesso_id'] == "2"){
-                header("Location: colaborador.php");
-            }else{
-                header("Location: cliente.php");
-            }
-        //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
-        //redireciona o usuario para a página de login
-        }else{    
-            //Váriavel global recebendo a mensagem de erro
-            $_SESSION['loginErro'] = "Usuário ou senha Incorretos";
-            header("Location: login.php");
-        }
-    //O campo usuário e senha não preenchido entra no else e redireciona o usuário para a página de login
-    }else{
-        $_SESSION['loginErro'] = "Usuário ou senha inválidos";
-        header("Location: login.php");
-    }
+if (mysql_num_rows($query) != 1) {
+      // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
+      echo "Login inválido!"; exit;
+  } else {
+      // Salva os dados encontrados na variável $resultado
+      $resultado = mysql_fetch_assoc($query);
+    
+      // Se a sessão não existir, inicia uma
+      if (!isset($_SESSION)) session_start();
+    
+      // Salva os dados encontrados na sessão
+      $_SESSION['UsuarioID'] = $resultado['id'];
+      $_SESSION['UsuarioNome'] = $resultado['nome'];
+      $_SESSION['UsuarioNivel'] = $resultado['niveis_acesso_id'];
+    
+      // Redireciona o visitante
+      header("Location: ../../cadastrar.html"); exit;
+  }
 ?>
