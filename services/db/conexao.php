@@ -18,7 +18,7 @@
         $sql = "use dbautoesporte";
         $pdo->exec($sql);
       header( 'refresh: 5; url = https://controleautoesporte-com-br.umbler.net/services/db/mostratabela.php' );
-echo 'Dado inserido com sucesso!';
+
     } catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
     }

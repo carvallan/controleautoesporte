@@ -1,5 +1,13 @@
 <?php
-      session_start(); // Inicia a sessão
-      session_destroy(); // Destrói a sessão limpando todos os valores salvos
-      header("Location: login.php"); exit; // Redireciona o visitante
-  ?>
+ 
+// inicia a sessão
+session_start();
+ 
+// muda o valor de logged_in para false
+$_SESSION['logged_in'] = false;
+ 
+// finaliza a sessão
+session_destroy();
+ 
+// retorna para a index.php
+header('Location: index.php');

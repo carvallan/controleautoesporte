@@ -1,7 +1,7 @@
 <?php
  
 // inclui o arquivo de inicialização
-require 'conexao.php';
+require 'init.php';
  
 // resgata variáveis do formulário
 $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
@@ -42,4 +42,4 @@ $_SESSION['logged_in'] = true;
 $_SESSION['user_id'] = $user['id'];
 $_SESSION['user_name'] = $user['name'];
  
-header('Location: mostratabela.php');
+header('Location: ../../cadastrar.html');

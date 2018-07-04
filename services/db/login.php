@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-  require 'funcoes.php';
+  require 'init.php';
 ?>
 
 <!DOCTYPE html>
