@@ -23,7 +23,7 @@
 
     <div class="form-label-group">
       <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Digite seu Usuário" required="" autofocus>
-      <label for="inputEmail">Usuário</label>
+      <label for="inputtext">Usuário</label>
     </div>
 
     <div class="form-label-group">
