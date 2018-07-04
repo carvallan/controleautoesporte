@@ -21,12 +21,12 @@ if($btnLogin){
 				header("Location: ../../cadastrar.html");
 			}else{
 				$_SESSION['msg'] = "Login e senha incorreto!";
-				header("Location: login.php");
+				header("Location: ../../intermediacao.html");
 			}
 		}
 	}else{
 		$_SESSION['msg'] = "Login e senha incorreto!";
-		header("Location: login.php");
+		header("Location: ../../intermediacao.html");
 	}
 }else{
 	$_SESSION['msg'] = "Página não encontrada";
