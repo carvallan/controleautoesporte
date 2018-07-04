@@ -8,7 +8,7 @@
   // Tenta se conectar ao servidor MySQL
   mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1") or trigger_error(mysql_error());
   // Tenta se conectar a um banco de dados MySQL
-  mysqli_select_db('usuarios') or trigger_error(mysql_error());
+  mysqli_select_db('dbautoesporte') or trigger_error(mysql_error());
     
   $usuario = mysqli_real_escape_string($_POST['usuario']);
   $senha = mysqli_real_escape_string($_POST['senha']);
