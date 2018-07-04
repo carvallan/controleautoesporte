@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("conexao.php");
 
 $login = $_POST['nome'];
 $senha = $_POST['senha'];
