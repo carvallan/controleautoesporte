@@ -11,4 +11,4 @@ ini_set('display_errors', true);
 error_reporting(E_ALL);
  
 // inclui o arquivo de funçõees
-require_once 'functions.php';
+require_once 'funcoes.php';
