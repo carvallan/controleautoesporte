@@ -6,31 +6,31 @@
   }
     
   // Tenta se conectar ao servidor MySQL
-  mysqli_connect_connect("mysql:host=mysql472.umbler.com", "autoesporte", "autoesporte1") or trigger_error(mysql_error());
+  mysqli_connect("mysql:host=mysql472.umbler.com", "autoesporte", "autoesporte1") or trigger_error(mysql_error());
   // Tenta se conectar a um banco de dados MySQL
-  mysqli_select_db_select_db('usuarios') or trigger_error(mysql_error());
+  mysqli_select_db('usuarios') or trigger_error(mysql_error());
     
-  $usuario = mysqli_real_escape_string_real_escape_string($_POST['usuario']);
-  $senha = mysqli_real_escape_string_real_escape_string($_POST['senha']);
+  $usuario = mysqli_real_escape_string($_POST['usuario']);
+  $senha = mysqli_real_escape_string($_POST['senha']);
     
   // Validação do usuário/senha digitados
   $sql = "SELECT `id`, `nome`, `niveis_acesso_id` FROM `usuarios` WHERE (`usuario` = '".$usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
-  $query = mysqli_query_query($sql);
-  if (mysqli_num_rows_num_rows($query) != 1) {
+  $query = mysqli_query($sql);
+  if (mysqli_num_rows($query) != 1) {
       // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
       echo "Login inválido!"; exit;
   } else {
       // Salva os dados encontados na variável $resultado
-      $resultado = mysqli_fetch_assoc_fetch_assoc($query);
+      $resultado = mysqli_fetch_assoc($query);
   }
 // 
 
-if (mysqli_num_rows_num_rows($query) != 1) {
+if (mysqli_num_rows($query) != 1) {
       // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
       echo "Login inválido!"; exit;
   } else {
       // Salva os dados encontrados na variável $resultado
-      $resultado = mysqli_fetch_assoc_fetch_assoc($query);
+      $resultado = mysqli_fetch_assoc($query);
     
       // Se a sessão não existir, inicia uma
       if (!isset($_SESSION)) session_start();
