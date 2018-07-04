@@ -23,9 +23,9 @@ $db = mysqli_select_db($cx, "dbautoesporte");
             $_SESSION['nome'] = $resultado['nome'];
             $_SESSION['niveis_acesso_id'] = $resultado['niveis_acesso_id'];
             $_SESSION['email'] = $resultado['email'];
-            if($_SESSION['usuarioNiveisAcessoId'] == "1"){
+            if($_SESSION['niveis_acesso_id'] == "1"){
                 header("Location: administrativo.php");
-            }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
+            }elseif($_SESSION['niveis_acesso_id'] == "2"){
                 header("Location: colaborador.php");
             }else{
                 header("Location: cliente.php");
