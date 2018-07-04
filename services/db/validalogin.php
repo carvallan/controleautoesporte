@@ -1,6 +1,6 @@
 <?php
 session_start();
-$cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
+include_once("conexao.php");    
 $btnLogin = filter_input(INPUT_POST, 'btnLogin', FILTER_SANITIZE_STRING);
 if($btnLogin){
 	$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
@@ -11,7 +11,7 @@ if($btnLogin){
 		//echo password_hash($senha, PASSWORD_DEFAULT);
 		//Pesquisar o usuário no BD
 		$result_usuario = "SELECT id, nome, email, senha FROM usuarios WHERE usuario='$usuario' LIMIT 1";
-		$resultado_usuario = mysqli_query($cx, $result_usuario);
+		$resultado_usuario = mysqli_query($pdo, $result_usuario);
 		if($resultado_usuario){
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 			if(password_verify($senha, $row_usuario['senha'])){
