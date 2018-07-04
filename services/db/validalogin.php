@@ -6,6 +6,7 @@ $cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
  
 //selecionando o banco de dados
 $db = mysqli_select_db($cx, "dbautoesporte"); 
+
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['nome'])) && (isset($_POST['senha']))){
         $usuario = mysqli_real_escape_string($pdo, $_POST['nome']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
@@ -26,7 +27,7 @@ $db = mysqli_select_db($cx, "dbautoesporte");
             if($_SESSION['niveis_acesso_id'] == "1"){
                 header("Location: administrativo.php");
             }elseif($_SESSION['niveis_acesso_id'] == "2"){
-                header("Location: colaborador.php");
+               header("Location: colaborador.php");
             }else{
                 header("Location: cliente.php");
             }
@@ -34,7 +35,7 @@ $db = mysqli_select_db($cx, "dbautoesporte");
         //redireciona o usuario para a página de login
         }else{    
             //Váriavel global recebendo a mensagem de erro
-            $_SESSION['loginErro'] = "Usuário ou senha Inválido";
+            $_SESSION['loginErro'] = "Usuário ou senha incorreto";
             header("Location: login.php");
         }
     //O campo usuário e senha não preenchido entra no else e redireciona o usuário para a página de login
