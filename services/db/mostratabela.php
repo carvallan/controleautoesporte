@@ -43,9 +43,9 @@ $sql = mysqli_query($cx, "SELECT * FROM clientes") or die(
             <li class="nav-item">
               <a class="nav-link" href="../../intermediacao.html">Lista de Intermediações</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Sair</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="/services/db/sair.php">Sair</a>
+          </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
