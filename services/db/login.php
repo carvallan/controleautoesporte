@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -13,20 +13,16 @@ session_start();
 </head>
 
 <body>
-  <h2>Área restrita!</h2>
-  <?php
-    if(isset($_session['msg'])){
-      echo $_session['msg'];
-      unset($_session['msg']);
-    }
-  ?>
+
+
   <form class="form-signin" method="post" action="validalogin.php">
+      <h2>Área restrita!</h2>
     <div class="text-center mb-4">
       <img class="mb-4 mt-5" src="https://i.imgur.com/0PLuszm.png" alt="" width="200vw" height="100vw">
     </div>
 
     <div class="form-label-group">
-      <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Digite seu Usuário" required="" autofocus="">
+      <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Digite seu Usuário" required="" autofocus>
       <label for="inputEmail">Usuário</label>
     </div>
 
@@ -37,6 +33,21 @@ session_start();
 
     <button class="btn btn-lg btn-success btn-block" type="submit" name="btnLogin">Entrar</button>
   </form>
+          <p>
+            <?php if(isset($_SESSION['loginErro'])){
+                echo $_SESSION['loginErro'];
+                unset($_SESSION['loginErro']);
+            }?>
+        </p>
+        <p>
+            <?php 
+            if(isset($_SESSION['logindeslogado'])){
+                echo $_SESSION['logindeslogado'];
+                unset($_SESSION['logindeslogado']);
+            }
+            ?>
+        </p>
+
 </body>
 
 </html>
