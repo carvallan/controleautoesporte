@@ -10,8 +10,8 @@
   // Tenta se conectar a um banco de dados MySQL
   $db = mysqli_select_db($cx, "dbautoesporte");
    
-  $usuario = mysql_real_escape_string($_POST['usuario']);
-  $senha = mysql_real_escape_string($_POST['senha']);
+  $usuario = mysqli_real_escape_string($_POST['usuario']);
+  $senha = mysqli_real_escape_string($_POST['senha']);
     
   // Validação do usuário/senha digitados
   $sql = "SELECT `id`, `nome`, `niveis_acesso_id` FROM `usuarios` WHERE (`usuario` = '".$usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
