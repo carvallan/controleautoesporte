@@ -1,7 +1,11 @@
 <?php
     session_start(); 
         //Incluindo a conexão com banco de dados   
-    include_once("conexao.php");    
+    //iniciando a conexão com o banco de dados
+$cx = mysqli_connect("mysql472.umbler.com", "autoesporte", "autoesporte1");
+ 
+//selecionando o banco de dados
+$db = mysqli_select_db($cx, "dbautoesporte"); 
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['nome'])) && (isset($_POST['senha']))){
         $usuario = mysqli_real_escape_string($pdo, $_POST['nome']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection

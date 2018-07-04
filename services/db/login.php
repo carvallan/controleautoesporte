@@ -15,7 +15,7 @@
 <body>
 
 
-  <form class="form-signin" method="post" action="validalogin.php">
+  <form class="form-signin" method="POST" action="validalogin.php">
       <h2>Área restrita!</h2>
     <div class="text-center mb-4">
       <img class="mb-4 mt-5" src="https://i.imgur.com/0PLuszm.png" alt="" width="200vw" height="100vw">
