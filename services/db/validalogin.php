@@ -19,10 +19,10 @@ $db = mysqli_select_db($cx, "dbautoesporte");
         
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         if(isset($resultado)){
-            $_SESSION['usuarioId'] = $resultado['id'];
-            $_SESSION['usuarioNome'] = $resultado['nome'];
-            $_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
-            $_SESSION['usuarioEmail'] = $resultado['email'];
+            $_SESSION['id'] = $resultado['id'];
+            $_SESSION['nome'] = $resultado['nome'];
+            $_SESSION['niveis_acesso_id'] = $resultado['niveis_acesso_id'];
+            $_SESSION['email'] = $resultado['email'];
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
                 header("Location: administrativo.php");
             }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
