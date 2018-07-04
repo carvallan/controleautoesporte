@@ -5,6 +5,6 @@ $senha = "autoesporte1"; //senha do banco de dados
 $db = "dbautoesporte"; //banco de dados
 
 
-mysqli_connect($host, $user, $senha) or die (mysqli_error());
-mysqli_select_db($db) or die (mysqli_error()); 
+$cx = mysqli_connect($host, $user, $senha);
+mysqli_select_db($cx, $db) or die (mysqli_error()); 
 ?>
