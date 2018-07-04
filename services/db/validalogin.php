@@ -9,7 +9,7 @@
         $senha = md5($senha);
             
         //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
-        $result_usuario = "SELECT * FROM usuarios WHERE nome = '$usuario' && senha = '$senha' LIMIT 1";
+        $result_usuario = "SELECT * FROM usuarios WHERE nome = '$nome' && senha = '$senha' LIMIT 1";
         $resultado_usuario = mysqli_query($cx, $result_usuario);
         $resultado = mysqli_fetch_assoc($resultado_usuario);
         
