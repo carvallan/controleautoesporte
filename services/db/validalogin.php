@@ -1,7 +1,27 @@
 <?php
     session_start(); 
         //Incluindo a conexão com banco de dados   
-    include_once("conexao.php");    
+     try{
+        $pdo = new PDO("mysql:host=mysql472.umbler.com", "autoesporte", "autoesporte1", array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
+                PDO::ATTR_PERSISTENT => false,
+                PDO::ATTR_EMULATE_PREPARES => false,
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+            )
+        );
+        
+        // Set the PDO error mode to exception
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        // Print host information
+         
+        // $pdo->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
+        $sql = "use dbautoesporte";
+        $pdo->exec($sql);
+      
+    } catch(PDOException $e){
+        die("ERROR: Could not connect. " . $e->getMessage());
+    }; 
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['nome'])) && (isset($_POST['senha']))){
         $usuario = mysqli_real_escape_string($pdo, $_POST['nome']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
