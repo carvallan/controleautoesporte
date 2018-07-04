@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("conexao.php");
 include("restrito.php");
 
 $sql_busca = "SELECT * FROM usuarios WHERE nome = '$nome_usuario'";

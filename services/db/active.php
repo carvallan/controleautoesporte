@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("conexao.php");
 
 if (isset($_GET['ac'])){
    $sessao = $_GET['ac'];

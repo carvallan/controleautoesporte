@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("conexao.php");
 
 if (isset($_POST['login'])){
 
